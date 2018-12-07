@@ -44,7 +44,7 @@ public abstract class Employee {
   abstract double calculateSalary();
 
   public void printEmployee() {
-    System.out.println(getFirstName() + " " + getLastName() + " " + calculateSalary());
+    System.out.println(getFirstName() + " " + getLastName() + " $" + calculateSalary());
   }
 
 
