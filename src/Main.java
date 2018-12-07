@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Main {
@@ -26,6 +27,8 @@ public class Main {
         totalSalary += employees.get(i).calculateSalary();
 
     }
+
+    System.out.println("$" + totalSalary);
   }
 
 
