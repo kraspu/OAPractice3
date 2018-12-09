@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Main {
@@ -11,23 +10,22 @@ public class Main {
 
     ArrayList<Employee> employees = new ArrayList<>();
 
-    employees.add(new Boss(20,"Boss", "Bossovich", 10000));
-    employees.add(new HourlyWorker(160, "Ivan", "Ivanov", 20));
-    employees.add(new HourlyWorker(200, "Ivan", "Petrov", 20));
-    employees.add(new HourlyWorker(100, "Ivan", "Sidorov", 20));
-    employees.add(new PieceWorker(100, "Alex", "Alexov", 20));
-    employees.add(new PieceWorker(150, "Dima", "Alexov", 20));
-    employees.add(new CommissionWorker(20, "Inna", "Ivanova", 3000, 100));
-    employees.add(new CommissionWorker(50, "Anna", "Petrova", 3000,100));
-    employees.add(new CommissionWorker(0, "Zoya", "Vasichkina", 3000,100));
+    employees.add(new Boss("Boss", "Bossovich", 10000));
+    employees.add(new HourlyWorker("Ivan", "Ivanov", 20, 160, 15));
+    employees.add(new HourlyWorker("Ivan", "Petrov", 20, 200, 15));
+    employees.add(new HourlyWorker("Ivan", "Sidorov", 20, 100, 15));
+    employees.add(new PieceWorker("Alex", "Alexov", 20, 100));
+    employees.add(new PieceWorker("Dima", "Alexov", 20, 150));
+    employees.add(new CommissionWorker("Inna", "Ivanova", 3000, 100, 20));
+    employees.add(new CommissionWorker("Anna", "Petrova", 3000,100, 50));
+    employees.add(new CommissionWorker("Zoya", "Vasichkina", 3000,100, 0));
 
     int totalSalary = 0;
     for (int i = 0; i < employees.size(); i++) {
         employees.get(i).printEmployee();
         totalSalary += employees.get(i).calculateSalary();
-
     }
-
+    System.out.println("=======================================");
     System.out.println("$" + totalSalary);
   }
 

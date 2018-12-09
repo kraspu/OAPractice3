@@ -3,9 +3,9 @@ public abstract class Employee {
   //В базовом классе определить 2 метода: расчет з/п сотрудника и вывод на экран имени и фамилии рабочего.
 
   final int DECEMBER_DAYS = 20;
+  final int HOURS_A_DAY = 8;
 
 
-  private int daysHoursDetails;
   private String firstName;
   private String lastName;
   private double salary;
@@ -18,9 +18,6 @@ public abstract class Employee {
     return lastName;
   }
 
-  public int getDaysHoursDetails() {
-    return daysHoursDetails;
-  }
 
   public double getSalary() {
     return salary;
@@ -34,8 +31,7 @@ public abstract class Employee {
     this.lastName = lastName;
   }
 
-  public Employee(int daysOrHours, final String FIRST_NAME, String LAST_NAME, double salary) {
-    this.daysHoursDetails = daysOrHours;
+  public Employee(final String FIRST_NAME, final String LAST_NAME, double salary) {
     setFirstName(FIRST_NAME);
     setLastName(LAST_NAME);
     this.salary = salary;
@@ -44,7 +40,7 @@ public abstract class Employee {
   abstract double calculateSalary();
 
   public void printEmployee() {
-    System.out.println(getFirstName() + " " + getLastName() + " $" + calculateSalary());
+    System.out.println(getFirstName() + " " + getLastName() + " - $" + calculateSalary());
   }
 
 

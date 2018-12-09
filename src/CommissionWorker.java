@@ -4,12 +4,15 @@ public class CommissionWorker extends Employee {
   //служащим начисляется базовая з/п плюс комиссионный процент от продаж.
 
   private double price;
+  private int soldOver;
 
 
-  public CommissionWorker(int selledOver, String FIRST_NAME, String LAST_NAME, double baseSalary, double price) {
+  public CommissionWorker(final String FIRST_NAME, final String LAST_NAME,
+                          double baseSalary, double price, int soldOver) {
 
-    super(selledOver, FIRST_NAME, LAST_NAME, baseSalary);
+    super(FIRST_NAME, LAST_NAME, baseSalary);
     setPrice(price);
+    setSoldOver(soldOver);
   }
 
   public double getPrice() {
@@ -20,9 +23,17 @@ public class CommissionWorker extends Employee {
     this.price = price;
   }
 
+  public int getSoldOver() {
+    return soldOver;
+  }
+
+  public void setSoldOver(int soldOver) {
+    this.soldOver = soldOver;
+  }
+
   @Override
   double calculateSalary() {
-    return getSalary() + getPrice() * getDaysHoursDetails();
+    return getSalary() + getPrice() * getSoldOver();
   }
 
 
